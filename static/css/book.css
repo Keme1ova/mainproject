@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .inpCont {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 600px;
+    align-items: center;
+    align-content: center;
+    padding: 50px 0;
+  }
+  
+  .firstInp {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .secondInp {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  label input {
+    padding: 15px 20px;
+    width: 350px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin: 10px 0 0px 0;
+  }
+  
+  label h4 {
+    font-size: 20px;
+    color: #146781;
+  }
+  
+  .sec1_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .sec1_inner h1 {
+    color: white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 20px 0;
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+  
+  .sec2_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sec1 {
+    width: 100%;
+    background-image: url(https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+  }
+  

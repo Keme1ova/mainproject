@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+
+</head>
+<body>
+{% include 'header.html'%}
+<h1 class="feedback" style="padding: 120px 0 30px 0; font-weight: normal;">FEEDBACK</h1>
+<a href="http://127.0.0.1:8000/notes/add_note/"  style="display: block;  font-weight: bold; text-align:center; font-size:2rem; color:rgba(30, 134, 167, 1) ;">CREATE FEEDBACK...</a>
+{% for i in object_list %}
+        <div class="note">
+            <h3 class="notes_title" style="padding-bottom: 20px; color: white">{{i.title_note}}</h3>
+            <p class="notes_text" style=" font-size: 20px; color: white">{{i.text_note}}</p>
+            <div class="notes_bottom">
+                <p class="notes_date" style=" padding-bottom: 20px; color: white">{{i.date_note}}</p>
+                
+            </div>
+        </div>
+        {% endfor %}
+
+
+{% include 'footer.html'%}
+
+</body>
+</html>

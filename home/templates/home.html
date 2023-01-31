@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home2.css' %}" />
+
+  </head>
+  <body>
+    <nav>
+      <div>
+        <ul class="right">
+          <li>
+            <img
+              src="../../static/img/mainlogo.svg "
+              alt="logo"
+              width="45"
+              height="45"
+            />
+          </li>
+          <li>
+            <h2 style="font-size: 45px; color: white">Wedding cars</h2>
+          </li>
+        </ul>
+        <ul class="left">
+          <li><a href="#home">Home</a></li>
+          <li><a href="http://127.0.0.1:8000/service/">Service</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#Feed">Feedback</a></li>
+          <li><a href="http://127.0.0.1:8000/order/">Book</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<header style="background-image: url(../../static/img/homeheader.jpg)" id="home">
+  <h1>welcome to wedding car hire</h1>
+</header>
+
+<main>
+  <section class="names"><h2>TYPES OF CARS</h2></section>
+  <section class="types">
+  {% for i in cars %}
+    <article style="background-image: url({{i.img.url}})">
+      <a href="/{{i.type}}"><h4>{{i.name}}</h4></a>
+      
+    </article>
+  {% endfor %}
+
+  </section>
+
+  <section class="par">
+    <div>
+      <p>
+        You can rent a car of any class in our fleet. All machines undergo mandatory maintenance and service control before each order. A wide range of different options is offered: from economy to luxury class. Middle-class cars will cost more, but the effect of their use will be much higher. According to the catalog, you can determine the size and type of the required machine, as well as get acquainted with the main features and technical characteristics
+      </p>
+    </div>
+    <div>
+      <p>
+        You can order a car from us for a special event, fro example, a wedding. The client always has the opportunity to choose among many worthy offers. In order to place an order, it is enough to place an application on the website by filling out a special form, contact us by phone or visit the office.
+      </p>
+    </div>
+  </section>
+
+  <section class="ser_parent">
+    <div class="ser">
+      <div>
+        <h2>Service</h2>
+        <a href="http://127.0.0.1:8000/service/">VIEW MORE</a>
+      </div>
+      <img
+        src="../../static/img/carlogo.svg"
+        alt="cars img"
+        width="950"
+        ;
+        height="580"
+        ;
+      />
+    </div>
+  </section>
+  <section
+    class="about"
+    id="about"
+    style="background-image: url(../../static/img/aboutusbackground.png);">
+    <h3>ABOUT US</h3>
+    {% for a in descriptions %}
+    <p>
+      {{a.text}}
+    </p>
+    {% endfor %}
+  </section>
+  <section class="com">
+    <h2 id="Feed">Feedback</h2>
+    <div class="comcards">
+      {% for i in coms %}
+      <div class="name">
+        <div>
+          <h3>{{i.name}}</h3>
+          <p>
+           {{i.comment}}
+          </p>
+        </div>
+      </div>
+      {% endfor %%}
+    </div>
+    <div class="buttom">
+      <a href="http://127.0.0.1:8000/comment">read more</a>
+    </div>
+    
+  </section>
+  <section class="btn_cont">
+    <div>
+      <a href="http://127.0.0.1:8000/order/">book a car</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+      <div>
+        <picture>
+          <img
+            src="../../static/img/mainlogo.svg"
+            width="100"
+            alt=""
+          />
+          <h4>
+            wedding cars <br />
+            rental
+          </h4>
+        </picture>
+      </div>
+      <div>
+        <h3>CONTACTS</h3>
+        {% for i in footer %}
+        <ul>
+          <li>Contacts: {{i.contacts}}</li>
+          <li>address: {{i.address}}</li>
+          <li>email: {{i.email}}</li>
+        </ul>
+        {% endfor %}
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <ul>
+          <li>INSTAGRAM</li>
+          <li>TIKTOK</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

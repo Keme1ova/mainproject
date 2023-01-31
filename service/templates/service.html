@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/service.css' %}" />
+  </head>
+  <body>
+    {% include 'header.html'%}
+    <header style="background-image: url({% static 'img/service.png'%})">
+      <h1>SERVICE</h1>
+    </header>
+
+    
+    <section class="section">
+      <div class="container">
+        {% for i in dec %}
+        <div class="section-box">
+          <div class="section-img">
+            <img src="{{i.img.url}}" alt="look there" width='800' height='450'  />
+            <div class="section-column">
+              <h4 class="section-title">{{i.title}}</h4>
+              <h6>PRICE: {{i.price}} SOM/HOUR</h6>
+            </div>
+          </div>
+
+          <div class="section-text">
+            <p class="section-subtitle">{{i.text}}</p>
+          </div>
+        </div>
+        {% endfor %} 
+      </div>
+    </section>
+    
+    {% include 'footer.html'%}
+  </body>
+</html>

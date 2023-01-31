@@ -1,0 +1,23 @@
+.types article {
+    width: 400px;
+    height: 300px;
+    
+  
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .types article h4 {
+    font: white 500;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+  }
+
+  .par {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
